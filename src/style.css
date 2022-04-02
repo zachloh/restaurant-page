@@ -1,0 +1,272 @@
+@font-face {
+  font-family: 'Oswald-Regular';
+  src: url('./assets/fonts/oswald-regular-webfont.woff2') format('woff2'),
+       url('./assets/fonts/oswald-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Palette-Mosaic';
+  src: url('./assets/fonts/palettemosaic-regular-webfont.woff2') format('woff2'),
+       url('./assets/fonts/palettemosaic-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Overpass-Mono';
+  src: url('./assets/fonts/overpass-mono-regular-webfont.woff2') format('woff2'),
+       url('./assets/fonts/overpass-mono-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fonesia-Regular';
+  src: url('./assets/fonts/fonesia-regular-webfont.woff2') format('woff2'),
+       url('./assets/fonts/fonesia-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Tex-Gye-Cursor';
+  src: url('./assets/fonts/texgyrecursor-regular-webfont.woff2') format('woff2'),
+       url('./assets/fonts/texgyrecursor-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --black-opacity-50: rgba(0, 0, 0, 0.5);
+  --black-opacity-60: rgba(0, 0, 0, 0.6);
+  --black-opacity-80: rgba(0, 0, 0, 0.8);
+  --grey-opacity-70: rgba(128, 128, 128, 0.7);
+  --beige-opacity-95: rgba(244, 234, 228, 0.95);
+  --dark-grey: #555;
+  --content-height: calc(100vh - 80px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Oswald-Regular', sans-serif;
+}
+
+#content {
+  min-height: 100vh;
+  background: url(./assets/images/bar.jpg) no-repeat center center fixed;
+  background-size: cover;
+  position: relative; 
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--black-opacity-50);
+  color: var(--white);
+}
+
+.header {
+  background-color: var(--black-opacity-80);
+  color: var(--white);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  height: 80px;
+}
+
+.logo {
+  font-family: 'Palette-Mosaic', sans-serif;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 100px;
+}
+
+.nav li {
+  cursor: pointer;
+}
+
+.nav li:hover {
+  transform: scale(1.1);
+}
+
+.image-text {
+  height: var(--content-height);
+  display: grid;
+  place-content: center;
+  animation: 1s fadeIn;
+}
+
+.main-text {
+  font-family: 'Overpass-Mono';
+  font-size: 80px;
+  font-weight: bold;
+  letter-spacing: 30px;
+  margin-top: 20vh;
+  margin-bottom: 30vh;
+  text-align: center;
+  display: grid;
+  gap: 10px;
+}
+
+.reservations {
+  justify-self: center;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  height: 40px;
+  width: 250px;
+  letter-spacing: 10px;
+  color: var(--white);
+  background-color: var(--grey-opacity-70);
+  border: 1px solid var(--white);
+  cursor: pointer;
+}
+
+.reservations:hover {
+  filter: brightness(0.6);
+}
+
+.reservations span {
+  margin-right: -10px;
+}
+
+.secondary-text {
+  text-align: center;
+}
+
+.address {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.menu-container {
+  height: var(--content-height);
+  display: grid;
+  place-content: center;
+  overflow: auto;
+  animation: 1s fadeIn;
+}
+
+.menu {
+  background-color: var(--beige-opacity-95);
+  color: var(--black);
+  padding: 35px;
+  height: 80vh;
+  width: max(35vw, 600px);
+  overflow: auto;
+}
+
+.menu-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  letter-spacing: 5px;
+}
+
+.menu-items-container {
+  display: grid;
+  grid-template-columns: 250px 250px;
+  gap: 30px;
+  justify-content: space-around;
+}
+
+.menu-item {
+  display: grid;
+  gap: 10px;
+}
+
+.menu-item-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.menu-item-description {
+  font-family: 'Fonesia-Regular', sans-serif;
+  font-size: 0.95rem;
+  color: var(--dark-grey);
+}
+
+.snacks-container {
+  margin-top: 40px;
+}
+
+.contact-container {
+  height: var(--content-height);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  font-family: 'Tex-Gye-Cursor', sans-serif;
+  padding: 20px;
+  animation: 1s fadeIn;
+}
+
+.contact {
+  display: grid;
+  gap: 30px;
+  background-color: var(--black-opacity-60);
+  border: 3px solid var(--white);
+  font-weight: bold;
+  padding: 30px;
+  overflow: auto;
+}
+
+.contact .title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.opening-times {
+  display: grid;
+  gap: 5px;
+}
+
+.contact img {
+  height: auto;
+  width: 500px;
+}
+
+.selected {
+  border-bottom: 3px solid var(--dark-grey);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+   
+  100% {
+    opacity: 1;
+  }
+}
