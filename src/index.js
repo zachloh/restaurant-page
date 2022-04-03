@@ -8,6 +8,7 @@ import { clearContent } from './clear-content';
 // initial page load
 loadCore();
 loadHome();
+addReservationsEventHandler();
 
 let currentTab = 'home';
 displaySelectedTab(currentTab);
